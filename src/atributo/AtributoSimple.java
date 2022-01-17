@@ -12,8 +12,7 @@ public class AtributoSimple implements Atributo {
 
     @Override
     public float getValor(Enfrentable e) {
-
-        return 0;
+        return value;
     }
 
 }
