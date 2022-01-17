@@ -18,7 +18,7 @@ public class AtributoCondicional implements Atributo {
 
     @Override
     public float getValor(Enfrentable e) {
-        return 0;
+        return e.getValorAtributo(key1) > e.getValorAtributo(key2) ? keyThen.getValor(e) : keyElse.getValor(e);
     }
 
 }
