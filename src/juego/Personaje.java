@@ -1,17 +1,26 @@
 package juego;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import atributo.Atributo;
 
 public class Personaje extends Enfrentable {
 
+    private Map<String, Atributo> atributos;
+
     public Personaje(String nombre, String nombreFantasia) {
         super(nombre, nombreFantasia);
-        // TODO Auto-generated constructor stub
+        this.atributos = new HashMap<String, Atributo>();
     }
 
     @Override
     public float getValorAtributo(String key) {
-        // TODO Auto-generated method stub
+
+        Atributo atributo = atributos.get(key);
+        if (atributo != null) {
+            return atributo.getValor(this);
+        }
         return 0;
     }
 
