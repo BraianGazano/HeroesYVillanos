@@ -31,4 +31,9 @@ public class Personaje extends Enfrentable {
         return personaje;
     }
 
+    public boolean addAtributo(String k, Atributo a) {
+        atributos.put(k, a);
+        return true;
+    }
+
 }
