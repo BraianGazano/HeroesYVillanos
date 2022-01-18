@@ -26,11 +26,17 @@ public abstract class Enfrentable {
     protected abstract List<Personaje> getPersonajes();
 
     public Enfrentable enfrentar(Enfrentable e, Comparator<Enfrentable> c) {
+        int comparacion = c.compare(this, e);
+        if (comparacion != 0) {
+            return comparacion < 0 ? e : this;
+        }
         return null;
     }
 
     public List<Personaje> ordenar(Comparator<Enfrentable> c) {
-        return null;
+        List<Personaje> personajes = getPersonajes();
+        personajes.sort(c);
+        return personajes;
     }
 
 }
