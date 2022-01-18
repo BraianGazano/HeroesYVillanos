@@ -1,6 +1,7 @@
 package juego;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import atributo.Atributo;
@@ -16,7 +17,6 @@ public class Personaje extends Enfrentable {
 
     @Override
     public float getValorAtributo(String key) {
-
         Atributo atributo = atributos.get(key);
         if (atributo != null) {
             return atributo.getValor(this);
@@ -26,8 +26,9 @@ public class Personaje extends Enfrentable {
 
     @Override
     protected List<Personaje> getPersonajes() {
-        // TODO Auto-generated method stub
-        return null;
+        List<Personaje> personaje = new LinkedList<Personaje>();
+        personaje.add(this);
+        return personaje;
     }
 
 }
