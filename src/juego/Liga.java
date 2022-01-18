@@ -26,14 +26,20 @@ public class Liga extends Enfrentable {
 
     @Override
     public float getValorAtributo(String key) {
-        // TODO Auto-generated method stub
+        float value = 0;
+        for (Enfrentable integrante : integrantes) {
+
+        }
         return 0;
     }
 
     @Override
     protected List<Personaje> getPersonajes() {
-        // TODO Auto-generated method stub
-        return null;
+        List<Personaje> personajes = new LinkedList<Personaje>();
+        for (Enfrentable integrante : integrantes) {
+            personajes.addAll(integrante.getPersonajes());
+        }
+        return personajes;
     }
 
 }
