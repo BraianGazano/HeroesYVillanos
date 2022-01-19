@@ -25,7 +25,7 @@ public class Personaje extends Enfrentable {
     }
 
     @Override
-    protected List<Personaje> getPersonajes() {
+    public List<Personaje> getPersonajes() {
         List<Personaje> personaje = new LinkedList<Personaje>();
         personaje.add(this);
         return personaje;
