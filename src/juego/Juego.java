@@ -13,15 +13,16 @@ public class Juego {
     }
 
     public List<Enfrentable> getQuienesVencen(Enfrentable e, Comparator<Enfrentable> c) {
+
         return null;
     }
 
     public Enfrentable enfrentar(Enfrentable e1, Enfrentable e2, Comparator<Enfrentable> c) {
-        return null;
+        return e1.enfrentar(e2, c);
     }
 
     public boolean addEnfrentable(Enfrentable e) {
-        return false;
+        return enfrentables.add(e);
     }
 
     public List<Personaje> ordenarPersonajes(Comparator<Enfrentable> c) {
