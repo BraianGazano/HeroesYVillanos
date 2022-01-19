@@ -14,8 +14,8 @@ public class AtributoSimple implements Atributo {
     public float getValor(Enfrentable e) {
         return value;
     }
-    
-    public void setValor(float value){
-    	this.value = value;
+
+    public void setValor(float value) {
+        this.value = value;
     }
 }
