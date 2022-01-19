@@ -28,9 +28,9 @@ public class Liga extends Enfrentable {
     public float getValorAtributo(String key) {
         float value = 0;
         for (Enfrentable integrante : integrantes) {
-
+            value += integrante.getValorAtributo(key);
         }
-        return 0;
+        return value;
     }
 
     @Override
@@ -41,5 +41,4 @@ public class Liga extends Enfrentable {
         }
         return personajes;
     }
-
 }

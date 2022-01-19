@@ -14,7 +14,13 @@ public class Juego {
 
     public List<Enfrentable> getQuienesVencen(Enfrentable e, Comparator<Enfrentable> c) {
 
-        return null;
+        List<Enfrentable> personajes = new LinkedList<Enfrentable>();
+        for (Enfrentable enfrentable : enfrentables) {
+            if (c.compare(e, enfrentable) < 0) {
+                personajes.add(enfrentable);
+            }
+        }
+        return personajes;
     }
 
     public Enfrentable enfrentar(Enfrentable e1, Enfrentable e2, Comparator<Enfrentable> c) {
@@ -26,6 +32,8 @@ public class Juego {
     }
 
     public List<Personaje> ordenarPersonajes(Comparator<Enfrentable> c) {
-        return null;
+        List<Personaje> personajes = new LinkedList<Personaje>();
+        personajes.sort(c);
+        return personajes;
     }
 }
