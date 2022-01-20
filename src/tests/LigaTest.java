@@ -67,7 +67,16 @@ public class LigaTest {
 	
 	@Test
 	public void obtenerElValorTotalDeLosAtributosDeUnaLiga() {
-		
+		Personaje batman = new Personaje("Bruce","Batman");
+		Personaje superman = new Personaje("Clark","Superman");
+		Personaje flash = new Personaje("Barry","Flash");
+		batman.addAtributo("Fuerza", new AtributoSimple(40));
+		superman.addAtributo("Fuerza", new AtributoSimple(20));
+		flash.addAtributo("Fuerza", new AtributoSimple(30));
+		this.liga.addIntegrante(batman);
+		this.liga.addIntegrante(superman);
+		this.liga.addIntegrante(flash);
+		Assert.assertEquals(30, this.liga.getValorAtributo("Fuerza"),0.1);
 	}
 }
 
