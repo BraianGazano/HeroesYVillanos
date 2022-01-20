@@ -30,7 +30,7 @@ public class Liga extends Enfrentable {
         for (Enfrentable integrante : integrantes) {
             value += integrante.getValorAtributo(key);
         }
-        return value;
+        return value / integrantes.size();
     }
 
     @Override
