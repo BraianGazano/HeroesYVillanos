@@ -10,6 +10,7 @@ import org.junit.Test;
 import atributo.AtributoSimple;
 import comparators.ComparatorCompuesto;
 import comparators.ComparatorCriterioSimple;
+import comparators.ComparatorNombre;
 import juego.Liga;
 import juego.Enfrentable;
 import juego.Juego;
@@ -109,6 +110,31 @@ public class JuegoTest {
 		juego.addEnfrentable(flash);
 		
 		ComparatorCriterioSimple c = new ComparatorCriterioSimple("Fuerza");
+		List<Personaje> resultado = new LinkedList<Personaje>();
+		resultado.add(flash);
+		resultado.add(batman);
+		resultado.add(superman);
+		Assert.assertEquals(resultado,juego.ordenarPersonajes(c));		
+	}
+	
+	@Test
+	public void ordenarPersonajesPorAtributoFuerzaYLuegoPorNombre() {
+		Personaje batman = new Personaje("Bruce","Batman");
+		Personaje superman = new Personaje("Clark","Superman");
+		Personaje flash = new Personaje("Barry","Flash");
+		batman.addAtributo("Fuerza", new AtributoSimple(20));
+		superman.addAtributo("Fuerza", new AtributoSimple(40));
+		flash.addAtributo("Fuerza", new AtributoSimple(20));
+		
+		juego.addEnfrentable(batman);
+		juego.addEnfrentable(superman);
+		juego.addEnfrentable(flash);
+		
+		ComparatorCompuesto c = new ComparatorCompuesto();
+		c.addComparator(new ComparatorCriterioSimple("Fuerza"));
+		c.addComparator(new ComparatorNombre());
+		
+
 		List<Personaje> resultado = new LinkedList<Personaje>();
 		resultado.add(flash);
 		resultado.add(batman);
