@@ -3,6 +3,7 @@ package juego;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Juego {
 
@@ -32,8 +33,13 @@ public class Juego {
     }
 
     public List<Personaje> ordenarPersonajes(Comparator<Enfrentable> c) {
-        List<Personaje> personajes = new LinkedList<Personaje>();
-        personajes.sort(c);
+    	
+    	List<Personaje> personajes = enfrentables.stream()
+				  .map(enfrentable -> enfrentable.ordenar(c))
+				  .flatMap(List::stream)
+				  .sorted(c)
+				  .distinct()
+				  .collect(Collectors.toList());
         return personajes;
     }
 }

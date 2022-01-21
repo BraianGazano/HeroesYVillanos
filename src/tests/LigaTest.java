@@ -7,8 +7,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import atributo.AtributoCondicional;
-import atributo.AtributoOperacionDivisor;
 import atributo.AtributoSimple;
 
 import juego.Liga;
